@@ -1,0 +1,39 @@
+package com.app;
+
+
+
+public class Person {
+    static int id = Main.people.size();
+    private String name;
+    private String surname;
+    private String phoneNumber;
+   
+
+    Person(String name, String surname, String phoneNumber) {
+        this.name = name;
+        this.surname = surname;
+        this.phoneNumber = phoneNumber;
+        
+        id++;
+    }
+
+    String getName() {
+        return name;
+    }
+
+    String getSurname() {
+        return surname;
+    }
+
+    String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+  
+
+    @Override
+    public String toString() {
+        return "\n\nName: " + getName() + "\nSurname: " + getSurname() + "\nPhone number: " + getPhoneNumber();
+                
+    }
+    }
