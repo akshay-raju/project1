@@ -1,0 +1,69 @@
+package banking;
+import java.util.*;
+
+public class Account {
+	String id;
+	int amount;
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getBalance() {
+		return balance;
+	}
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+	String name;
+	int balance;
+	private Scanner input;
+	
+	void withdraw()
+	{
+		input = new Scanner(System.in);
+		System.out.print("Enter amount: ");
+    	 amount = input.nextInt();
+	   if(amount<=balance)
+	   {
+		   System.out.println("cash dispensed");
+		   balance=balance-amount;
+		   System.out.println(balance);
+		   
+	   }
+	   else
+	   {
+		   System.out.println("insufficient funds");
+	   }
+	}
+	@SuppressWarnings("unused")
+	void transfer() {
+		// TODO Auto-generated method stub
+		@SuppressWarnings("resource")
+		Scanner input2 = new Scanner(System.in);
+		System.out.print("Enter amount: ");
+    	 int amount1 = input2.nextInt();
+	   if(amount1<=balance)
+	   {
+		   System.out.println("Amount transfered");
+		   balance=balance-amount;
+		   System.out.println(balance);
+	   }
+	   else
+	   {
+		   System.out.println("insufficient funds");
+	   }
+	}
+	
+	public String toString(){//overriding the toString() method  
+		  return id+" "+name+" "+balance;
+	}
+}
